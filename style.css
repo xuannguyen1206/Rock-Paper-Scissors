@@ -1,0 +1,96 @@
+* {
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+* body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+#boardWrap {
+  border: 3px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 0 50px 0;
+}
+
+#scoreBoard {
+  border: 3px solid #dddada;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: red;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+#scoreBoard h3 {
+  color: white;
+  font-size: 50px;
+}
+
+#chooseArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+  border: 1px solid red;
+}
+
+#chooseArea .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 3px solid #dddada;
+  margin: 20px;
+  padding: 45px;
+  border-radius: 80%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+#chooseArea .wrapper .images {
+  height: 100px;
+  width: 200px;
+}
+
+#chooseArea .wrapper figcaption {
+  padding-top: 20px;
+  color: white;
+}
+
+p {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
+
+.choosing {
+  -webkit-transform: rotate(45);
+          transform: rotate(45);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=style.css.map */

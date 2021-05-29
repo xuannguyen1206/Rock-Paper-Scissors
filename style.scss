@@ -1,0 +1,68 @@
+*{
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+}
+$borderColor: rgb(221, 218, 218);
+$letterColor: rgb(255, 255, 255);
+$letterSize: 50px;
+#boardWrap{
+    border: 3px solid red;
+    display: flex;
+    justify-content: center ;
+    padding: 50px 0 50px 0;
+}
+#scoreBoard{
+    border: 3px solid $borderColor;
+    display: inline-flex;
+    color: red;
+    align-items: flex-end;
+    font-size: $letterSize;
+    padding-right: 50px;
+    padding-left: 50px;
+    h3{
+        color: $letterColor;
+        font-size: $letterSize;
+    }
+}
+#chooseArea{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border: 1px solid red;
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        border: 3px solid $borderColor;
+        margin:20px;
+        padding:45px;
+        border-radius: 80%;
+        transition: all 1s ease;
+        .images{
+            height: 100px;
+            width: 200px;
+        }
+        figcaption{
+            padding-top: 20px;
+            color: $letterColor;
+        }
+       
+    }
+}
+p{
+    color: $letterColor;
+    font-size: 50px;
+    text-align: center;
+    
+}
+.choosing{
+    transform: rotate(45);
+    transform: scale(1.1);
+}
+
