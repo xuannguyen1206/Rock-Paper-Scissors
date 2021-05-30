@@ -58,44 +58,67 @@ function updateScore(res){
 
 function announce(result,computerChoice="none",playerChoice="none"){
         
-    const announcement = document.createElement('p');
     if(result === 1){
         announcement.textContent = (`You draw`)
     }
     else if(result === 2){
         announcement.textContent =(`You win.${playerChoice} beats ${computerChoice}`);
+        comChoiceAnnouncement.textContent = (`Computer choice: ${computerChoice}`);
         updateScore(2);
     }
     else{
         announcement.textContent =(`You lose.${playerChoice} was beaten by ${computerChoice}`);
+        comChoiceAnnouncement.textContent = (`Computer choice: ${computerChoice}`);
         updateScore(3);
     }
+    body.appendChild(comChoiceAnnouncement);
     body.appendChild(announcement);
 }
 function scoreBoard(matchNo){
     console.log(`\t\t Round ${matchNo}`);
     console.log(`computer: ${comScore}\t\t player:${playerScore}`);
 }
-function match(matchNum){
-    for(let i= 1; i <= matchNum; i++){
-        const playerChoice = window.prompt('Enter your choice:');
-        const comChoice = computerPlay();
-        decideWhoWin(comChoice,playerChoice);
-        playerScoreboard.textContent = playerScore;
-        comScoreboard.textContent = comScore;
-    }
-    console.log(`\t\t FINAL `);
-    console.log(`computer: ${comScore}\t\t player:${playerScore}`);
+function match(playerChoice){
+    
+    const comChoice = computerPlay();
+    decideWhoWin(comChoice,playerChoice);
+    playerScoreboard.textContent = playerScore;
+    comScoreboard.textContent = comScore;
 }
+
+
+
 let comScore=0, playerScore=0;
-let numberOfMatches=window.prompt("Enter number of matches:");
-
 // DOM manipulation
-
+const body = document.querySelector('body');
 const playerScoreboard = document.querySelectorAll('h3')[0];
 const comScoreboard = document.querySelectorAll('h3')[1];
-const choices = Array.from(document.querySelectorAll('.wrapper'))
-
-const body = document.querySelector('body');
+const rock = document.querySelector(".rock");
+const scissors = document.querySelector(".scissors");
+const paper = document.querySelector(".paper");
+const announcement = document.createElement('p'); // p display match result at the end of round
+const comChoiceAnnouncement = document.createElement('p');// display the computer's choice
 //////////////////////
-match(numberOfMatches);
+
+rock.addEventListener('click', () => {
+    match('rock');
+})
+scissors.addEventListener('click', () => {
+    match('scissors');
+})
+paper.addEventListener('click', () => {
+    match('paper');
+})
+
+
+
+
+
+
+
+
+
+
+
+
+

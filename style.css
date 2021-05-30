@@ -69,6 +69,7 @@
   border-radius: 80%;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  cursor: pointer;
 }
 
 #chooseArea .wrapper .images {
