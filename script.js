@@ -79,7 +79,7 @@ function scoreBoard(matchNo){
     console.log(`computer: ${comScore}\t\t player:${playerScore}`);
 }
 function match(playerChoice){
-    
+    comChoiceAnnouncement.textContent ="";
     const comChoice = computerPlay();
     decideWhoWin(comChoice,playerChoice);
     playerScoreboard.textContent = playerScore;
@@ -103,11 +103,29 @@ const comChoiceAnnouncement = document.createElement('p');// display the compute
 rock.addEventListener('click', () => {
     match('rock');
 })
+rock.addEventListener('mouseover',() => {
+    rock.classList.add('choosing');
+})
+rock.addEventListener('mouseleave',() => {
+    rock.classList.remove('choosing');
+})
 scissors.addEventListener('click', () => {
     match('scissors');
 })
+scissors.addEventListener('mouseover',() => {
+    scissors.classList.add('choosing');
+})
+scissors.addEventListener('mouseleave',() => {
+    scissors.classList.remove('choosing');
+})
 paper.addEventListener('click', () => {
     match('paper');
+})
+paper.addEventListener('mouseover',() => {
+    paper.classList.add('choosing');
+})
+paper.addEventListener('mouseleave',() => {
+    paper.classList.remove('choosing');
 })
 
 

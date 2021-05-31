@@ -70,11 +70,12 @@
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
   cursor: pointer;
+  width: 25%;
 }
 
 #chooseArea .wrapper .images {
-  height: 100px;
-  width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 #chooseArea .wrapper figcaption {
@@ -89,9 +90,40 @@ p {
 }
 
 .choosing {
-  -webkit-transform: rotate(45);
-          transform: rotate(45);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.choosing .images {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation: choosing 1s infinite;
+          animation: choosing 1s infinite;
+}
+
+@-webkit-keyframes choosing {
+  25% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  75% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+@keyframes choosing {
+  25% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  75% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,7 @@
 $borderColor: rgb(221, 218, 218);
 $letterColor: rgb(255, 255, 255);
 $letterSize: 50px;
+$animationTime: 1s;
 #boardWrap{
     border: 3px solid red;
     display: flex;
@@ -43,19 +44,19 @@ $letterSize: 50px;
         margin:20px;
         padding:45px;
         border-radius: 80%;
-        transition: all 1s ease;
+        transition: all $animationTime ease;
         cursor: pointer;
-
+        width: 25%;
         .images{
-            height: 100px;
-            width: 200px;
+            width: 100%;
+            height: auto;
         }
         figcaption{
             padding-top: 20px;
             color: $letterColor;
         }
-       
-    }
+        
+    }   
 }
 p{
     color: $letterColor;
@@ -64,7 +65,20 @@ p{
     
 }
 .choosing{
-    transform: rotate(45);
     transform: scale(1.1);
+    animation-iteration-count: infinite;
+    .images{
+        transition: all $animationTime ease;
+        animation-iteration-count: infinite;
+        animation: choosing $animationTime infinite;
+    }
+    @keyframes choosing {
+        25%{
+            transform: rotate(45deg);
+        }
+        75%{
+            transform: rotate(-45deg);
+        }
+    }   
 }
 
